@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, BrowserRouter as Router } from 'react-router-dom'; 
 import './index.css';
 import App from './App';
-
+import Context from './Components/ContextProvider/Context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <Context>
   <BrowserRouter>
     <App />
+   
   </BrowserRouter>
+</Context>
 );
 
 // If you want to start measuring performance in your app, pass a function

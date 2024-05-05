@@ -1,9 +1,76 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 import "./index.css";
 
 const SignIn = () => {
- 
+  const [passShow, setPassShow] = useState(false);
+  const [inpval, setInpval] = useState({
+    email: "",
+    password: "",
+   
+  });
+  const history = useNavigate();
+
+  const setVal = (e) => {
+    const { name, value } = e.target;
+    setInpval((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+  const loginuser = async (e) => {
+    e.preventDefault();
+    const { email, password, userType } = inpval;
+
+    if (email === "") {
+      toast.error("email is required!",{
+        position:'top-right'
+      });
+    } else if (!email.includes("@")) {
+      toast.warning("includes @ in your email!",{
+        position:'top-right'
+      });
+    }else if (password === "") {
+      toast.error("password is required!",{
+        position:'top-right'
+      });
+    } else if (password.length < 6) {
+      toast.error("password must be 6 char!",{
+        position:'top-right'
+      });
+    } else {
+      try {
+        const response = await axios.post(
+          "http://localhost:8080/api/login",
+          { email, password }
+        );
+        const { status, result } = response.data;
+
+        if (status === 200) {
+          localStorage.setItem("userdatatoken", result.token);
+          history("/dashboard");
+          setInpval({ ...inpval, email: "", password: "" });
+          toast.success("User logged successfully",{
+            position:'top-right'
+          })
+        } else {
+          toast.error("Invalid Credentials",{
+            position:'top-right'
+          });
+        }
+      } catch (error) {
+        console.error("Error Logging In :", error);
+
+        toast.error("An error Occured. Please try again later.", {
+          position:'top-right'
+        });
+      }
+    }
+  };
+
   return (
     <>
       <div className="pt-4 pb-4"></div>
@@ -21,8 +88,8 @@ const SignIn = () => {
               <div className="mb-4">
                 <input
                   type="email"
-                  // value={inpval.email}
-                  // onChange={setVal}
+                  value={inpval.email}
+                  onChange={setVal}
                   name="email"
                   id="email"
                   className="input-field"
@@ -30,37 +97,38 @@ const SignIn = () => {
                 />
               </div>
               <div className="mb-4">
-                <input
-                  type="text"
-                  // onChange={setVal}
-                  // value={inpval.password}
+              <input
+                  type={!passShow ? "password" : "text"}
+                  onChange={setVal}
+                  value={inpval.password}
                   name="password"
                   id="password"
                   placeholder="Enter Your password"
                   className="input-field"
                 />
-                {/* <div
+                <div
                   className="showpass"
                   onClick={() => setPassShow(!passShow)}
                 >
                   {!passShow ? "Show" : "Hide"}
-                </div> */}
+                </div>
               </div>
               <Link className="link" to="/reset-password-email">
                 {" "}
                 <p className="forgot">Forgot password?</p>
               </Link>
               
-             <Link to='/dashboard'> <button
+              <button
                 type="submit"
                 className="signin-button"
-                // onClick={loginuser}
+                onClick={loginuser}
               >
                 Sign In
-              </button></Link>
+              </button>
             </form>
            
           </div>
+          <ToastContainer/>
         </div>
       </div>
     </>
