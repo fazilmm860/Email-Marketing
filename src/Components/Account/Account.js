@@ -12,18 +12,7 @@ export default class Account extends Component {
             <div className="col-12">
               <div className="page-header">
                 <h4 className="page-title">Account</h4>
-                <div className="quick-link-wrapper w-100 d-md-flex flex-md-wrap">
-                  {/* <!-- <ul className="quick-links">
-                  <li><a href="#">option 1</a></li>
-                  <li><a href="#">Own analysis</a></li>
-                  <li><a href="#"> data</a></li>
-                </ul> --> */}
-                  {/* <!-- <ul className="quick-links ml-auto">
-                  <li><a href="#">Settings</a></li>
-                  <li><a href="#">Option 1</a></li>
-                  <li><a href="#">option 2</a></li>
-                </ul> --> */}
-                </div>
+               
               </div>
             </div>
 
@@ -52,62 +41,7 @@ export default class Account extends Component {
 
 
 
-          {/* <!-- tab mode   --> */}
-
-          {/* <div className="row">
-            <div className="col-12 col-md-4 grid-margin">
-              <div className="card">
-                <div className="card-body">
-                  <div className="row">
-
-                    <div className="col-12 mb-3">
-
-                      <h4 >Initial Flow Rate : 60L/sec</h4>
-                    </div>
-
-
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-md-4 grid-margin">
-              <div className="card">
-                <div className="card-body">
-                  <div className="row">
-
-                    <div className="col-12 mb-3">
-
-                      <h4 >Initial Treated Water : 123456</h4>
-                    </div>
-
-
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-md-4 grid-margin">
-              <div className="card">
-                <div className="card-body">
-                  <div className="row">
-
-                    <div className="col-12 mb-3">
-
-                      <h4 >Staff in charge</h4>
-                      <p className="mb-0">Remesh Suresh</p>
-                      <p>9878675443</p>
-                    </div>
-
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div> */}
-
-          {/* <!-- tab mode ends  --> */}
-
-
+       
 
         </div>
         {/* <!-- content-wrapper ends -->

@@ -21,20 +21,9 @@ const SignUp = () => {
                   <div className="col-12 col-lg-6 ">
 
                   
-                      <div className="alert alert-danger mt-3 mb-0"></div>
                     
                     <form >
-                        <p className="signup-head">Get yourself an with Product ID</p>
-                          <div className="mb-4">
-                            <input
-                              className="input-field"
-                              type="number"
-                              placeholder="Product ID"
-                              name="product_id"
-                             
-                            />
-                            <span className="error">Product ID required</span>
-                          </div>
+                          
                           <div className="mb-4">
                             <input
                               className="input-field"
@@ -43,8 +32,7 @@ const SignUp = () => {
                               name="firstName"
                               
                             />
-                           <span className="error">Minimum 2 Characters required</span>
-                            <span className="error">First Name required</span>
+                          
                           </div>
                           <div className="mb-4">
                             <input
@@ -54,7 +42,6 @@ const SignUp = () => {
                               name="lastName"
                            
                             />
-                           <span className="error">Last Name required</span> 
                           </div>
                           <div className="mb-4">
                             <input
@@ -64,8 +51,7 @@ const SignUp = () => {
                               name="email"
                               
                             />
-                            <span className="error">Email is required</span>
-                            <span className="error"></span>
+                           
                           </div>
                           <div className="mb-4">
                             <input
@@ -75,8 +61,7 @@ const SignUp = () => {
                               name="password"
                               
                             />
-                           <span className="error">Minimum 8 Characters required</span> 
-                             <span className="error">Password is required</span>
+                          
                           </div>
                           <div className="mb-4">
                             <input
@@ -86,8 +71,7 @@ const SignUp = () => {
                               name="confirm_password"
                               
                             />
-                            <span className="error">Confirm Password is required</span>
-                            <span className="error"></span>
+                            
                           </div>
 
                           <div className="mb-4">
@@ -103,7 +87,6 @@ const SignUp = () => {
                               {" "}
                               Agree to our <a href="">terms and conditions</a>
                             </label>
-                            <span className="error">Please Accept terms and conditions </span>
                           </div>
                         <button className="signin-button mb-5" type="submit">Continue</button>                    
                         {/* <Link className="link" to="/signup-confirmation"> <button className="signin-button mb-5">Continue</button></Link> */}
