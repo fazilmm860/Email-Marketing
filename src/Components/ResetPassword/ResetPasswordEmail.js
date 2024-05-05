@@ -1,7 +1,6 @@
 import { Component, useState } from "react";
 import {Link} from 'react-router-dom'
 import "./index.css";
-import { useForm } from "react-hook-form";
 import {ToastContainer,toast} from 'react-toastify';
 import axios from 'axios';
 
@@ -21,8 +20,9 @@ const ResetPasswordEmail = () => {
     }else if(!email.includes("@")){
       toast.warning("Include @ in your email")
     }else {
+      const url ='http://localhost:8080/api/sendpasswordlink';
       try {
-        const response = await axios.post('http://localhost:4444/api/sendpasswordlink',{
+        const response = await axios.post(url,{
         email:email
       },{
         headers:{

@@ -5,10 +5,12 @@ import SignIn from './Components/SignIn/SignIn';
 import SignUp from './Components/SignUp/SignUp';
 import PrivateLayout from './Components/PrivateLayout/PrivateLayout';
 import Account from './Components/Account/Account';
+import ResetPasswordEmail from './Components/ResetPassword/ResetPasswordEmail';
 import Dashboard from './Components/Dashboard/Dashboard';
 import { useContext, useEffect, useState } from 'react';
 import { LoginContext } from './Components/ContextProvider/Context';
 import axios from 'axios';
+import ManageUsers from './Components/ManageUsers/ManageUsers';
 
 function App() {
   const [dataLoaded, setDataLoaded] = useState(false);
@@ -48,11 +50,14 @@ function App() {
         <Route path ="/" element ={<PublicLayout/>}>
           <Route exact path="" element={<SignIn />} />
           <Route exact path="signup" element={<SignUp />} />
+          <Route exact path="reset-password-email" element={<ResetPasswordEmail />} />
+
         </Route>
 
         <Route path='/' element={<PrivateLayout/>}>
           <Route path='/account' element={<Account/>}/>
           <Route path='/dashboard' element={<Dashboard/>}/>
+          <Route exact path="/manage-users" element={<ManageUsers />} />
         </Route>
      </Routes>
 
