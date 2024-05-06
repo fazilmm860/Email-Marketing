@@ -10,7 +10,6 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import { useContext, useEffect, useState } from 'react';
 import { LoginContext } from './Components/ContextProvider/Context';
 import axios from 'axios';
-import Message from './Components/Mail/Message';
 import ViewAllLeads from './Components/ViewAllLeads/ViewAllLeads';
 import EditLeads from './Components/ViewAllLeads/EditLeads';
 import AddNewLead from './Components/ViewAllLeads/AddNewLead';
