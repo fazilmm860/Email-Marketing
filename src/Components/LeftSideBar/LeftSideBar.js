@@ -38,12 +38,7 @@ const LeftSideBar = () => {
                 <span className="menu-title">Dashboard</span>
               </Link>
             </li>
-            <li className={`nav-item `}>
-              <Link className="nav-link" to="/leads">
-                <i className="menu-icon typcn typcn-document-text"></i>
-                <span className="menu-title">Leads </span>
-              </Link>
-            </li>
+           
           </>
         
 

@@ -212,9 +212,7 @@ const PrivateLayout = () => {
               <li>
                 <Link to="/dashboard" onClick={closeDropdown}>Dashboard</Link>
               </li>
-              <li>
-                <Link to="/leads" onClick={closeDropdown}>Leads</Link>
-              </li>
+             
              
             </ul>
           </div>

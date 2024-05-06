@@ -10,10 +10,13 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import { useContext, useEffect, useState } from 'react';
 import { LoginContext } from './Components/ContextProvider/Context';
 import axios from 'axios';
-import Message from './Components/Dashboard/Message';
+import Message from './Components/Mail/Message';
 import ViewAllLeads from './Components/ViewAllLeads/ViewAllLeads';
 import EditLeads from './Components/ViewAllLeads/EditLeads';
 import AddNewLead from './Components/ViewAllLeads/AddNewLead';
+import Mail from './Components/Mail/Mail';
+import SentMail from './Components/Mail/SentMail';
+import MailStatistics from './Components/Mail/MailStatistics';
 
 function App() {
   const [dataLoaded, setDataLoaded] = useState(false);
@@ -60,7 +63,9 @@ function App() {
         <Route path='/' element={<PrivateLayout/>}>
           <Route path='/account' element={<Account/>}/>
           <Route path='/dashboard' element={<Dashboard/>}/>
-          <Route path='/message' element={<Message/>}/>
+          <Route path='/mail' element={<Mail/>}/>
+          <Route path='/send-mail' element={<SentMail/>}/>
+          <Route path='/mail-statistics' element={<MailStatistics/>}/>
           <Route path='/view-leads' element={<ViewAllLeads/>}/>
           <Route path='/add-leads' element={<AddNewLead/>}/>
           <Route exact path='/edit-leads/:userId' element={<EditLeads/>}/>
