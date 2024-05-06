@@ -1,0 +1,19 @@
+.box-container-wrapper {
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly along the main axis */
+}
+
+.box-container {
+  flex: 0 0 calc(33.33% - 10px); /* Adjust the width of each box to fit within the flex container */
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+@media (max-width: 767px) {
+  .box-container {
+    flex: 0 0 calc(50% - 10px); /* Adjust the width of each box for smaller screens */
+  }
+}

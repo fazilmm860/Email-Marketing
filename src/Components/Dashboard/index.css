@@ -1,0 +1,24 @@
+.box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 100px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+}
+
+.box-container span {
+  font-size: 48px;
+  margin-right: 10px;
+}
+
+.box-container p {
+  margin: 0;
+  font-size: 16px;
+  cursor: pointer;
+}

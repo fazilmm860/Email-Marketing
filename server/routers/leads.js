@@ -4,7 +4,8 @@ const  {
     viewLeads,
     findALead,
     editALead,
-    deleteLead
+    deleteLead,
+    findALeadById
 } = require('../controllers/leads')
 
 const router=express.Router()
@@ -17,6 +18,9 @@ router.get('/view', viewLeads);
 
 // Route to find a lead by type
 router.get('/find/:type', findALead);
+
+// Route to find a lead byID
+router.get('/findById/:id', findALeadById);
 
 // Route to edit a lead
 router.put('/edit/:id', editALead);

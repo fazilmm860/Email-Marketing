@@ -39,7 +39,7 @@ const LeftSideBar = () => {
               </Link>
             </li>
             <li className={`nav-item `}>
-              <Link className="nav-link" to="/dashboard">
+              <Link className="nav-link" to="/leads">
                 <i className="menu-icon typcn typcn-document-text"></i>
                 <span className="menu-title">Leads </span>
               </Link>

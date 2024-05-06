@@ -67,6 +67,29 @@ const findALead = async (req, res) => {
         });
     }
 };
+const findALeadById = async (req, res) => {
+    try {
+        const leadId = req.params.id; 
+        const lead = await leadsdb.findById(leadId); 
+        if (!lead) {
+            return res.status(404).json({
+                success: false,
+                message: "Lead not found"
+            });
+        }
+        res.status(200).json({
+            success: true,
+            message: "Lead found successfully",
+            lead: lead
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: "Error from Catch",
+            error: error.message
+        });
+    }
+};
 
 // Edit a Lead
 const editALead = async (req, res) => {
@@ -137,6 +160,7 @@ module.exports = {
     viewLeads,
     findALead,
     editALead,
-    deleteLead
+    deleteLead,
+    findALeadById,
 };
 

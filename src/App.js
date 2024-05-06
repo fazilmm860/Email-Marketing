@@ -10,6 +10,10 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import { useContext, useEffect, useState } from 'react';
 import { LoginContext } from './Components/ContextProvider/Context';
 import axios from 'axios';
+import Message from './Components/Dashboard/Message';
+import ViewAllLeads from './Components/ViewAllLeads/ViewAllLeads';
+import EditLeads from './Components/ViewAllLeads/EditLeads';
+import AddNewLead from './Components/ViewAllLeads/AddNewLead';
 
 function App() {
   const [dataLoaded, setDataLoaded] = useState(false);
@@ -56,6 +60,10 @@ function App() {
         <Route path='/' element={<PrivateLayout/>}>
           <Route path='/account' element={<Account/>}/>
           <Route path='/dashboard' element={<Dashboard/>}/>
+          <Route path='/message' element={<Message/>}/>
+          <Route path='/view-leads' element={<ViewAllLeads/>}/>
+          <Route path='/add-leads' element={<AddNewLead/>}/>
+          <Route exact path='/edit-leads/:userId' element={<EditLeads/>}/>
         </Route>
      </Routes>
 
