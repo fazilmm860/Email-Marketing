@@ -4,6 +4,8 @@ const cors=require('cors');
 
 const db=require('./config/db');
 const userRoutes=require('./routers/user')
+const leadsRoutes=require('./routers/leads');
+const messageRoutes=require('./routers/message');
 
 const app= express();
 const port=process.env.PORT || 5555
@@ -23,6 +25,8 @@ app.use(cors({
 })
 
 app.use('/api',userRoutes)
+app.use('/api',leadsRoutes)
+app.use('/api',messageRoutes)
 
 app.listen(port,()=>{
     console.log(`Server Connected  - ${port}`);

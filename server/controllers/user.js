@@ -1,4 +1,3 @@
-const express=require('express');
 const userdb=require('../models/user');
 const bcrypt=require('bcrypt');
 const nodemailer=require('nodemailer');

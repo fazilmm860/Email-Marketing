@@ -10,7 +10,6 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import { useContext, useEffect, useState } from 'react';
 import { LoginContext } from './Components/ContextProvider/Context';
 import axios from 'axios';
-import ManageUsers from './Components/ManageUsers/ManageUsers';
 
 function App() {
   const [dataLoaded, setDataLoaded] = useState(false);
@@ -57,7 +56,6 @@ function App() {
         <Route path='/' element={<PrivateLayout/>}>
           <Route path='/account' element={<Account/>}/>
           <Route path='/dashboard' element={<Dashboard/>}/>
-          <Route exact path="/manage-users" element={<ManageUsers />} />
         </Route>
      </Routes>
 
