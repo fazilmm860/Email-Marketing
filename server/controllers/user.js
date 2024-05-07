@@ -12,7 +12,7 @@ const transporter=nodemailer.createTransport({
     secure:true,
     service:'gmail',
     auth:{
-        user:process.env.EMAIl,
+        user:process.env.EMAIL,
         pass:process.env.PASSWORD
     }
 })
@@ -140,10 +140,10 @@ const sendPasswordLink= async (req,res)=>{
 
         if(setusertoken){
             const mailOptions ={
-                from:process.env.EMAIl,
+                from:process.env.EMAIL,
                 to:email,
                 subject:"Sending Email for Password Reset",
-                text:`This Link Valid for 2 Minutes https://6639aa558807c09561abd7eb--phenomenal-croquembouche-5dbecf.netlify.app/${userfind._id}/${setusertoken.verifytoken}`
+                text:`This Link Valid for 2 Minutes http://localhost:3000/reset-password-email/${userfind._id}/${setusertoken.verifytoken}`
 
             }
             transporter.sendMail(mailOptions,(error,info)=>{
