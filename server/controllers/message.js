@@ -33,7 +33,14 @@ const sendEmailToLeads = async (req, res) => {
             subject: req.body.subject,
             text: req.body.content
         };
-
+             // Save email details to messagedb
+        const message = new messagedb({
+            from: process.env.EMAIL,
+            to: emailList.join(','),
+            subject: req.body.subject,
+            content: req.body.content
+        });
+        await message.save();
         // Send mail 
         transporter.sendMail(mailOptions, (error, info) => {
             totalMailsSent++;
@@ -62,7 +69,19 @@ const sendEmailToLeads = async (req, res) => {
         });
     }
 };
-
+const getMailSentDetails=async (req, res) => {
+    try {
+        const sentMessages = await messagedb.find();
+        res.status(200).json(sentMessages);
+    } catch (error) {
+        console.error(`Error: ${error}`);
+        res.status(500).json({
+            success: false,
+            message: 'Error occurred while retrieving sent messages',
+            error: error.message
+        });
+    }
+}
 const getMailStatistics = (req, res) => {
     res.status(200).json({
         totalMailsSent,
@@ -73,5 +92,6 @@ const getMailStatistics = (req, res) => {
 
 module.exports = {
     sendEmailToLeads,
-    getMailStatistics
+    getMailStatistics,
+    getMailSentDetails
 };

@@ -27,8 +27,8 @@ const AddNewLead = () => {
                 toast.warning('Please add your Email Id')
             }else if(isLead.mobile === ''){
                 toast.warning('Please add your Mobile Number')
-            }else if(isLead.type === ''){
-                toast.warning('Please select the Type')
+            }else if(isLead.type === 'select'){
+                toast.error('Please select the Type')
             }else{
                 let leadDataToSend = isLead;
                 const url='http://localhost:8080/api/add'
@@ -56,6 +56,15 @@ const AddNewLead = () => {
           toast.error('Error In Occured Please try again')
         }
     }
+    const handleCancel = () => {
+        setIsLead({
+            fname: "",
+            lname: "",
+            email: "",
+            mobile: "",
+            type: ""
+        });
+    };
   return (
     <div className="main-panel">
     <div className="content-wrapper">
@@ -64,24 +73,7 @@ const AddNewLead = () => {
         <div className="col-12">
           <div className="page-header">
             <h4 className="page-title">Add Notification Dashboard</h4>
-            <div className="quick-link-wrapper w-100 d-md-flex flex-md-wrap">
-              {/* <!-- <ul className="quick-links">
-            <li><a href="#">option 1</a></li>
-            <li><a href="#">Own analysis</a></li>
-            <li><a href="#"> data</a></li>
-          </ul> --> */}
-              <ul className="quick-links ml-auto">
-                <li>
-                  <a href="#">Settings</a>
-                </li>
-                <li>
-                  <a href="#">Option 1</a>
-                </li>
-                <li>
-                  <a href="#">option 2</a>
-                </li>
-              </ul>
-            </div>
+           
           </div>
         </div>
       </div>
@@ -142,24 +134,30 @@ const AddNewLead = () => {
                       
                      
 
-                      <div className="col-12 col-lg-6 col-md-6 mb-3">
-                        <label htmlFor="exampleFormControlInput5">Select Type</label>
-                        <select className="form-control" id="exampleFormControlInput5"  name='type' onChange={handleInputChange} value= { isLead.type}>
-                            <option>customer</option>
-                            <option>re-seller</option>
-                        </select>
-                        
-                      </div>
+                                         <div className="col-12 col-lg-6 col-md-6 mb-3">
+                                            <label htmlFor="exampleFormControlInput5">Select Type</label>
+                                            <select
+                                                className="form-control"
+                                                id="exampleFormControlInput5"
+                                                name='type'
+                                                onChange={handleInputChange}
+                                                value={isLead.type}
+                                            >
+                                                <option value="select"name='type'>select</option>
+                                                <option value="customer"name='type'>customer</option>
+                                                <option value="re-seller"name='type'>re-seller</option>
+                                            </select>
+                                        </div>
 
                       
                      
                      
                       <div className="mt-4 mb-5 p-2">
-                        <button type="submit" className="btn btn-primary mb-2" onClick={handleSubmit}   > Add Notication </button>
+                        <button type="submit" className="btn btn-primary mb-2" onClick={handleSubmit}> Add Notication </button>
                       </div>
                       
                         <div className="mt-4 mb-5 p-2">
-                        <Link to='/dashboard'><button type="button"  className="btn btn-danger mb-2"> Cancel </button></Link>
+                       <button type="button"  className="btn btn-danger mb-2"onClick={handleCancel}> Cancel </button>
                         </div>
                         
                       
