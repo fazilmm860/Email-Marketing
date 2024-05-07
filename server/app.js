@@ -15,7 +15,7 @@ app.use(express.json())
 db();
 
 app.use(cors({
-    origin: 'http://localhost:3001',
+    origin: 'http://localhost:3000',
     credentials: true  // Allow cookies to be sent with the request
   }));
 
