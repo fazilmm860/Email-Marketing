@@ -8,7 +8,7 @@ const leadsRoutes=require('./routers/leads');
 const messageRoutes=require('./routers/message');
 
 const app= express();
-const port=process.env.PORT || 5555
+const port=process.env.PORT 
 
 app.use(express.json())
 
