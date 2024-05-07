@@ -20,7 +20,7 @@ const ResetPasswordEmail = () => {
     }else if(!email.includes("@")){
       toast.warning("Include @ in your email")
     }else {
-      const url ='http://localhost:8080/api/sendpasswordlink';
+      const url ='https://email-marketing-p55w.onrender.com/api/sendpasswordlink';
       try {
         const response = await axios.post(url,{
         email:email

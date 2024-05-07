@@ -31,7 +31,7 @@ const AddNewLead = () => {
                 toast.error('Please select the Type')
             }else{
                 let leadDataToSend = isLead;
-                const url='http://localhost:8080/api/add'
+                const url='https://email-marketing-p55w.onrender.com/api/add'
                 const res= await axios.post(url,leadDataToSend)
                 console.log('leadDataToSend:',leadDataToSend);
                 if(res.status === 201){

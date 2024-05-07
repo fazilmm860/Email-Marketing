@@ -19,7 +19,7 @@ const EditLeads = ()=>{
     useEffect(() => {
         const fetchLeads = async () => {
           try {
-            const url = 'http://localhost:8080/api/findById'
+            const url = 'https://email-marketing-p55w.onrender.com/api/findById'
             const response = await axios.get(`${url}/${userId}`);
             const leadData = response.data.lead;
             console.log(leadData);

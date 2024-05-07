@@ -20,7 +20,7 @@ const ResetPassword = () => {
 
  const userValid = async () =>{
       try {
-       const response = await axios.get(`http://localhost:4444/api/forgotpassword/${id}/${token}`,{
+       const response = await axios.get(`https://email-marketing-p55w.onrender.com/api/forgotpassword/${id}/${token}`,{
           headers:{
             "Content-Type":"application/json",
             "Accept":'application/json'
@@ -56,7 +56,7 @@ const sendPassword = async (e) => {
   } else {
     try {
       const res = await axios.post(
-        `http://localhost:4444/api/${id}/${token}`,
+        `https://email-marketing-p55w.onrender.com/api/${id}/${token}`,
         {
           password,
           cpassword,
@@ -107,8 +107,7 @@ useState(()=>{
                     value={password}
                     onChange={setVal}
                   />
-                  {/* <span className="error">Minimum 8 Characters required</span>
-                   <span className="error">Password is required</span> */}
+                  
                   
                   <input
                     className="input-field mb-4"
@@ -118,8 +117,7 @@ useState(()=>{
                     value={cpassword}
                     onChange={setVal}
                   />
-                  {/* <span className="error">Confirm Password is required</span>
-                  <span className="error"></span> */}
+                  
                 
                   
                 <button className="signin-button mb-5" type="submit" onClick={sendPassword}>Reset</button>

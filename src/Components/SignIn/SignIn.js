@@ -44,7 +44,7 @@ const SignIn = () => {
     } else {
       try {
         const response = await axios.post(
-          "http://localhost:8080/api/login",
+          "https://email-marketing-p55w.onrender.com/api/login",
           { email, password }
         );
         const { status, result } = response.data;

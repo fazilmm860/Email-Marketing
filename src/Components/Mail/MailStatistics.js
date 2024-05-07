@@ -25,7 +25,7 @@ const MailStatistics = () => {
       useEffect(()=>{
         const fetchEmailDetails = async () => {
             try {
-                const url ='http://localhost:8080/api/get-mail-details'
+                const url ='https://email-marketing-p55w.onrender.com/api/get-mail-details'
               const response = await axios.get(url);
               const AllDetails = response.data;
               console.log(AllDetails);

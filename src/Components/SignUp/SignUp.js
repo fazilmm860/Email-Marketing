@@ -41,7 +41,7 @@ const [userData,setUserData]=useState({
       toast.error("Password and Confirm Password Mismatch")
     }else{
       let userDataToSend= userData;
-      const url= 'http://localhost:8080/api/register'
+      const url= 'https://email-marketing-p55w.onrender.com/api/register'
       const response = await axios.post(url,userDataToSend)
       console.log('userDataToSend:',userDataToSend);
       if(response.status === 201){

@@ -143,7 +143,7 @@ const sendPasswordLink= async (req,res)=>{
                 from:process.env.EMAIl,
                 to:email,
                 subject:"Sending Email for Password Reset",
-                text:`This Link Valid for 2 Minutes http://localhost:3000/reset-password-email/${userfind._id}/${setusertoken.verifytoken}`
+                text:`This Link Valid for 2 Minutes https://6639aa558807c09561abd7eb--phenomenal-croquembouche-5dbecf.netlify.app/${userfind._id}/${setusertoken.verifytoken}`
 
             }
             transporter.sendMail(mailOptions,(error,info)=>{

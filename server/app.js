@@ -15,7 +15,7 @@ app.use(express.json())
 db();
 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://6639aa558807c09561abd7eb--phenomenal-croquembouche-5dbecf.netlify.app/',
     credentials: true  // Allow cookies to be sent with the request
   }));
 

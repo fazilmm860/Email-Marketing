@@ -32,7 +32,7 @@ const PrivateLayout = () => {
     const fetchData=async()=>{
       try{
           let token = localStorage.getItem("userdatatoken")
-          const url ='http://localhost:8080/api/validuser'
+          const url ='https://email-marketing-p55w.onrender.com/api/validuser'
           const response =await axios.get(url,{
             headers:{
               'Content-Type':"application/json",
@@ -69,7 +69,7 @@ const PrivateLayout = () => {
   const logoutUser = async () =>{
     try {
       let token = localStorage.getItem("userdatatoken");
-      const url ='http://localhost:8080/api/logout'
+      const url ='https://email-marketing-p55w.onrender.com/api/logout'
     const response = await axios.get(url,{
       headers:{
         'Content-type':"application/json",

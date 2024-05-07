@@ -9,7 +9,7 @@ const ViewAllLeads = () => {
     useEffect(()=>{
         const fetchUsers = async () => {
             try {
-                const url ='http://localhost:8080/api/view'
+                const url ='https://email-marketing-p55w.onrender.com/api/view'
               const response = await axios.get(url);
               const AllLeads = response.data.leads;
               console.log(AllLeads);
@@ -22,7 +22,7 @@ const ViewAllLeads = () => {
       },[])
       const handleDeleteLeads=async(leadId)=>{
         try {
-            const url ='http://localhost:8080/api/delete'
+            const url ='https://email-marketing-p55w.onrender.com/api/delete'
             const shouldDelete= window.confirm('Are you sure?')
             if(shouldDelete){
                 const res= await axios.delete(`${url}/${leadId}`)

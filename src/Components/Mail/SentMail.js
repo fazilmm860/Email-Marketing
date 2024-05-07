@@ -24,7 +24,7 @@ const SentMail = () => {
                 toast.warning('Please select the Content')
             }else{
                 let MailDataToSend = isMail;
-                const url='http://localhost:8080/api/send-email'
+                const url='https://email-marketing-p55w.onrender.com/api/send-email'
                 const res= await axios.post(url,MailDataToSend)
                 console.log('MailDataToSend:',MailDataToSend);
                 if(res.status === 201){
